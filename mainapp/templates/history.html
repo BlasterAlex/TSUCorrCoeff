@@ -10,27 +10,34 @@
 {% for result in results %}
 <div class="card history-card">
   <div class="card-header">
-    Результат {{ forloop.counter }}
+    <label>
+      Результат {{ forloop.counter }}
+    </label>
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   </div>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
       <p><b>Входные параметры:</b><br>
         {% for row in result.matrix %}
-        {% if forloop.counter0 == 0 %}
-        Y =
-        {% else %}
-        X{{ forloop.counter0 }} =
-        {% endif %}
-        {{ row }} <br>
+        <span class="name">
+          {% if forloop.counter0 == 0 %}
+          Y
+          {% else %}
+          X{{ forloop.counter0 }}
+          {% endif %}
+        </span> =
+        <span class="rows">{{ row }}</span><br>
         {% endfor %}
       </p>
-      <footer class="blockquote-footer">
-        <div class="form-group">
-          <label for="outputArea">Вывод:</label>
-          <textarea class="form-control" id="outputArea" rows="10" readonly>{{ result.result }}</textarea>
-        </div>
-      </footer>
+      <button class="btn btn-primary fill-with-btn" type="submit">Заполнить</button>
+      <div class="form-group">
+        <label for="outputArea">Вывод:</label>
+        <textarea class="form-control" id="outputArea" rows="10" readonly>{{ result.result }}</textarea>
+      </div>
     </blockquote>
+  </div>
+  <div class="card-footer text-muted">
+    {{ result.created }}
   </div>
 </div>
 {% endfor %}
@@ -41,4 +48,6 @@
 {% endblock %}
 
 {% block scripts %}
+<script type="text/javascript" src="{% static 'js/utils/clearFlash.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/utils/history.js' %}"></script>
 {% endblock %}

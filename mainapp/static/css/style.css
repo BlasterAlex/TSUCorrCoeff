@@ -9,11 +9,14 @@
 
 .alert {
   max-width: 550px;
-  margin: 10px auto;
   text-align: center;
+  position: fixed;
+  top: 30px;
+  z-index: 100;
 }
 
 /* Bootstrap buttons hover */
+
 .btn {
   transition: all 0.2s;
 }
@@ -39,7 +42,9 @@ form h4 {
   margin-bottom: 40px;
 }
 
-/* Main form */
+/* 
+ * ------------- Main form -------------
+*/
 
 .main-form {
   width: 550px;
@@ -119,8 +124,31 @@ form h4 {
   font-size: 14px;
 }
 
-/* History */
+/* 
+ * ------------- History -------------
+*/
+
 .history-card {
   margin: 10px 0;
   width: 80%;
+}
+
+.history-card .card-header {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.history-card .card-header label {
+  margin-bottom: 0;
+}
+
+.history-card .card-body label {
+  margin-top: 15px;
+  font-size: 80%;
+  color: #6c757d;
+}
+
+.history-card .card-header .close {
+  top: 21px;
+  font-size: 30px;
 }

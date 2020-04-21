@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+// Вывод уведомления
+var createAlert = function (type, text) {
+  $('.container .page').prepend('<div class="alert alert-' + type + '">' +
+    '<div>' + text + '</div>');
+  clearFlash();
+}
+
 // Удаление сообщений
 function clearFlash() {
   let messages = $('.alert').toArray(); // запомнить текущее состояние уведомлений
@@ -25,4 +32,5 @@ function clearFlash() {
     });
   }, 5000);
 }
+
 clearFlash();
