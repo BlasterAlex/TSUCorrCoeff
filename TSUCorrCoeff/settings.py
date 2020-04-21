@@ -28,16 +28,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 import os
 import configparser
-config = configparser.ConfigParser()
-config.read(os.path.join('config', 'local.ini'))
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+CONFIG_DIR = os.path.join(BASE_DIR, 'config')
 
+config = configparser.ConfigParser()
+config.read(os.path.join(CONFIG_DIR, 'local.ini'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -51,6 +52,7 @@ DEBUG = config['DEFAULT']['Debug']
 ALLOWED_HOSTS = [
     'localhost',
     'tsucorrcoeff.pythonanywhere.com',
+    'tsucorrcoef.pythonanywhere.com',
 ]
 
 
