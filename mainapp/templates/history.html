@@ -1,0 +1,44 @@
+{% extends  'base.html' %}
+{% load static %}
+
+{% block title %}История{% endblock title %}
+
+{% block main %}
+
+{% if results %}
+<h4>Результаты предыдущих вычислений:</h4>
+{% for result in results %}
+<div class="card history-card">
+  <div class="card-header">
+    Результат {{ forloop.counter }}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><b>Входные параметры:</b><br>
+        {% for row in result.matrix %}
+        {% if forloop.counter0 == 0 %}
+        Y =
+        {% else %}
+        X{{ forloop.counter0 }} =
+        {% endif %}
+        {{ row }} <br>
+        {% endfor %}
+      </p>
+      <footer class="blockquote-footer">
+        <div class="form-group">
+          <label for="outputArea">Вывод:</label>
+          <textarea class="form-control" id="outputArea" rows="10" readonly>{{ result.result }}</textarea>
+        </div>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<h4>Сохраненных вычислений нет</h4>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

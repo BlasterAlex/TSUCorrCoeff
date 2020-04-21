@@ -1,0 +1,28 @@
+{% extends  'base.html' %}
+{% load static %}
+
+
+{% block main %}
+<form class="main-form">
+  {% csrf_token %}
+  <h4>Введите коэффициенты парной корреляции</h4>
+  <div class="variables-block">
+  </div>
+  <div class="bottom-bar">
+    <div class="form-group row">
+      <label for="varQty" class="col-sm-0 col-form-label number-label">Количество переменных:</label>
+      <input class="form-control number" type="number" id="varQty" value="3" min="2" max="20" step="1" />
+    </div>
+    <div class="form-group row">
+      <label for="arrSize" class="col-sm-0 col-form-label number-label">Размер переменных:</label>
+      <input class="form-control number" type="number" id="arrSize" value="5" min="2" max="20" step="1" />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Вычислить</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/utils/clearFlash.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/utils/main-form.js' %}"></script>
+{% endblock %}

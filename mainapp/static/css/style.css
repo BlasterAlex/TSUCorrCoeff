@@ -1,0 +1,126 @@
+.page {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Alerts */
+
+.alert {
+  max-width: 550px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Bootstrap buttons hover */
+.btn {
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn:hover[disabled] {
+  box-shadow: none;
+  transform: none;
+}
+
+/* Forms */
+
+form {
+  margin: 0 auto !important;
+} 
+
+form h4 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Main form */
+
+.main-form {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Variables block */
+
+.variables-block .form-group {
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.variables-block .input-with-button {
+  position: relative;
+  width: 92%;
+}
+
+/* Variable inputs */
+
+.variables-block input {
+  padding-right: 45px;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 20px;  
+  line-height: 0;
+  vertical-align: center;
+}
+
+.close span {
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Bottom bar */
+
+.bottom-bar .form-group {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.number-label {
+  line-height: 1.2;
+  margin-right: 10px;
+}
+
+.number {
+  width: 75px; 
+  padding: 5px 10px;
+}
+
+.main-form button {
+  margin: 15px auto;
+}
+
+.main-form .btn {
+  margin: 25px auto 15px auto;
+}
+
+#outputArea {
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+  font-size: 14px;
+}
+
+/* History */
+.history-card {
+  margin: 10px 0;
+  width: 80%;
+}
