@@ -7,4 +7,4 @@ db.sqlite3
 .vscode
 
 config/local.ini
-static
+/static
