@@ -7,3 +7,4 @@ pycodestyle==2.5.0
 pytz==2019.3
 scipy==1.4.1
 sqlparse==0.3.1
+timeago==1.0.14
