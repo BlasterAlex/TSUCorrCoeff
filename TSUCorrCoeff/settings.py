@@ -50,7 +50,7 @@ DEBUG = config['DEFAULT']['SecretKey']
 
 ALLOWED_HOSTS = [
     'localhost',
-    'blasteralex.pythonanywhere.com',
+    'tsucorrcoeff.pythonanywhere.com',
 ]
 
 
