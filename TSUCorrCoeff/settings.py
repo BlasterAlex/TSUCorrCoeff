@@ -43,10 +43,10 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['DEFAULT']['Debug']
+SECRET_KEY = config['DEFAULT']['SecretKey']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config['DEFAULT']['SecretKey']
+DEBUG = config['DEFAULT']['Debug']
 
 ALLOWED_HOSTS = [
     'localhost',
