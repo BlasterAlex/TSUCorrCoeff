@@ -50,10 +50,11 @@ var setVarQty = function (qty) {
     return;
   }
 
-  // Заполение новой переменной числами
-  var newVar = varBlock.find('.variable:last');
-  if (newVar.find('.input-with-button input').val() === '')
-    setVarSize(newVar, $("#arrSize").val());
+  // Заполение пустых переменной числами
+  varBlock.find('.variable').each(function () {
+    if ($(this).find('.input-with-button input').val() === '')
+      setVarSize($(this), $("#arrSize").val());
+  });
 }
 
 // Установить размер переменной
@@ -174,7 +175,6 @@ else {
     varBlock.append(getVarHtml(key.toUpperCase()));
     varBlock.find('.variable:last .input-with-button input').val(value.split('%20'));
   }
-
 }
 
 // Установка заданного размера переменых
