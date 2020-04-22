@@ -14,8 +14,18 @@
  * limitations under the License.
  */
 
-//  Активация вкладки текущего URL
+// Активация вкладки текущего URL
 $('.navbar .nav-item').each(function () {
   if ($(this).attr('href') === window.location.pathname)
     $(this).addClass('active');
+});
+
+// Отслеживание скрола страницы
+$(window).scroll(function () {
+  let pageTop = parseInt($('.page').offset().top);
+  if ($(this).scrollTop() >= pageTop) {
+    $('.navbar').addClass('transparent');
+  } else {
+    $('.navbar').removeClass('transparent');
+  }
 });
