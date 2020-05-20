@@ -113,7 +113,7 @@ def history(request):
 
         if 'coeff_history' in request.session:
             context['results'] = request.session['coeff_history']
-        else
+        else:
             context['results'] = []
 
         # Обратная сортировка записей по дате создания
